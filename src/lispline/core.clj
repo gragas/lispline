@@ -1,7 +1,9 @@
 (ns lispline.core
+  (:use [lispline.pipeline])
   (:gen-class))
 
 (defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+  "Loads a runs a pipeline."
+  [pipeline-path]
+  (let [pipeline (load-pipeline pipeline-path)]
+      (run-pipeline pipeline)))
